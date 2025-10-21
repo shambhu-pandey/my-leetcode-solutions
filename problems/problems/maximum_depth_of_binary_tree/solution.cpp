@@ -15,10 +15,12 @@ public:
         if(root==NULL){
             return 0;
         }
-        int left = maxDepth(root->left); // height left tree ka 
-        int right = maxDepth(root->right); // height right tree ka 
-         
-         int val = max(left , right)+ 1 ;// +1 because root ko alag se add kar rhe hai 
-         return val;
+
+        int left = maxDepth(root->left);
+        int right = maxDepth(root->right);
+
+        int val = max(left , right)+1 ;
+
+        return val;
     }
 };
