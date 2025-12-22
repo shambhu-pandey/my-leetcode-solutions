@@ -1,14 +1,16 @@
 class Solution {
 public:
     int reverse(int x) {
-        long long reverseNum = 0;  // use bigger type
-        while (x != 0) {
-            int lastDigit = x % 10;
-            reverseNum = reverseNum * 10 + lastDigit;
-            x /= 10;
-        }
-        // check if result is in 32-bit range
-       if(reverseNum < INT_MIN || reverseNum >INT_MAX) return 0;
-       return int(reverseNum);
+       int temp = x ;
+       int rev =0;
+       while(temp !=0){
+        int digit   = (temp) % 10;
+        if(rev > INT_MAX/10 || (rev == INT_MAX/10 && digit >7 )) return 0;
+        if(rev < INT_MIN/10 || (rev ==INT_MIN/10 && digit < -8)) return 0;
+        rev = (rev*10) + digit;
+        temp = temp/10;
+       }
+
+       return rev ;
     }
 };
