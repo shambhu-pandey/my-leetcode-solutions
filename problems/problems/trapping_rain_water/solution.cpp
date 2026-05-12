@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        int left =0;
+        int right = height.size()-1;
+
+        int leftmax =height[left];
+        int rightmax=height[right];
+        int water =0;
+        while(left<right){
+               if(leftmax < rightmax){
+                left++;
+                leftmax = max(leftmax , height[left]);
+                water =  water + leftmax - height[left]; // height of left means block 
+               }
+               else{
+                right--;
+                rightmax = max(rightmax , height[right]);
+                water = water + rightmax -height[right];
+               }
+        }
+          return water;
+    }
+  
+};
