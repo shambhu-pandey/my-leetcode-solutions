@@ -1,37 +1,25 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        string cleaned = "";
+        int left = 0;
+        int right = s.size()-1;
 
-        // for(char c : s){
-        //     if(isalnum(c)){
-        //       cleaned += tolower(c);
-        //     }
-        // }
+        while(left<right){
 
-
-        for(char ch: s){
-            if(isalnum(ch)){
-                if(ch>='a' && ch<='z'){
-                    cleaned +=ch;
+            if(!isalnum(s[left])){
+                left++;
+            }
+            else if(!isalnum(s[right])){
+                right--;
+            }
+            else{
+                if(tolower(s[left]) != tolower(s[right])){
+                    return false;
                 }
-                else if(ch>='A' && ch<='Z'){
-                    char temp = ch-'A'+'a';
-                    cleaned += temp;
-                }
-                else{
-                    cleaned +=ch;
-                }
-
+                left++;
+                right--;
             }
         }
-
-        string reversed ="";
-
-        for(int i = cleaned.length()-1;i>=0;i--){
-            reversed += cleaned[i];
-        } 
-
-        return reversed == cleaned;
+        return true;
     }
 };
