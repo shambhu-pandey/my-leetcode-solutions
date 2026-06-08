@@ -1,18 +1,22 @@
 class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
-        vector<int> result;
+        int n = nums.size();
+        
+        sort(nums.begin() , nums.end());
+        vector<int>ans;
 
-        for(int i =0;i<nums.size();i++){
-            int idx = abs(nums[i])-1;
-            if(nums[idx]<0){
-                result.push_back(abs(nums[i]));
+        for(int i =1; i<n; i++){
+            // duplicate mila
+           if(nums[i] == nums[i-1]){
+
+            // Same duplicate baar baar add na ho
+            if(ans.empty() || ans.back() != nums[i]){
+            ans.push_back(nums[i]);
             }
-            else{
-                nums[idx]=-nums[idx];
-            }
+           }
         }
 
-        return result;
+        return ans;
     }
 };
