@@ -1,17 +1,23 @@
-# Diameter of Binary Tree
+# 🚀 Diameter of Binary Tree
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/diameter-of-binary-tree/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 Tree, Depth-First Search, Binary Tree
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given the root of a binary tree, return the length of the diameter of the tree.
 
@@ -19,7 +25,7 @@ The diameter of a binary tree is the length of the longest path between any two 
 
 The length of a path between two nodes is represented by the number of edges between them.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -35,15 +41,63 @@ Input: root = [1,2]
 Output: 1
 
 
-&nbsp;
+ 
 Constraints:
 
 
 	The number of nodes in the tree is in the range [1, 104].
-	-100 &lt;= Node.val &lt;= 100
+	-100 <= Node.val <= 100
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+    pair<int , int> diameterFast(TreeNode* root){
+        if(root == NULL){
+            return {0,0};
+        }
+
+        pair<int, int> left =  diameterFast(root->left);
+        pair<int , int> right = diameterFast(root->right);
+
+        int op1 = left.first;
+        int op2 = right.first;
+        int op3 = left.second + right.second +1;
+
+        pair<int , int> ans;
+        ans.first = max(op1 , max(op2 , op3));
+        ans.second =  max(left.second , right.second)+1;
+
+        return ans;
+    }
+public:
+    int diameterOfBinaryTree(TreeNode* root) {
+        return diameterFast(root).first -1;
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:32*

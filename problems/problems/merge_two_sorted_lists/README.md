@@ -1,17 +1,23 @@
-# Merge Two Sorted Lists
+# 🚀 Merge Two Sorted Lists
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/merge-two-sorted-lists/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 Linked List, Recursion
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 You are given the heads of two sorted linked lists list1 and list2.
 
@@ -19,7 +25,7 @@ Merge the two lists into one sorted list. The list should be made by splicing to
 
 Return the head of the merged linked list.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -41,18 +47,45 @@ Input: list1 = [], list2 = [0]
 Output: [0]
 
 
-&nbsp;
+ 
 Constraints:
 
 
 	The number of nodes in both lists is in the range [0, 50].
-	-100 &lt;= Node.val &lt;= 100
+	-100 <= Node.val <= 100
 	Both list1 and list2 are sorted in non-decreasing order.
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
 
+class Solution {
+    public ListNode mergeTwoLists(ListNode a, ListNode b) {
+        if(a == null) return b;
+        if(b == null) return a;
+
+        if(a.val < b.val){
+            a.next = mergeTwoLists(a.next , b);
+            return a;
+        }
+        else{
+            b.next = mergeTwoLists(a , b.next);
+            return b;
+        }
+    }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:58*

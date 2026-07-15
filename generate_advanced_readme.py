@@ -1,17 +1,10 @@
 import os
-import re
 import requests
-from google import genai
-
-# =========================
-# CONFIG
-# =========================
+import re
+import html
+import time
 
 BASE_DIR = "problems/problems"
-
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
 
 QUERY = """
 query questionData($titleSlug: String!) {
@@ -26,60 +19,12 @@ query questionData($titleSlug: String!) {
 }
 """
 
-# =========================
-# AI NOTES
-# =========================
-
-def generate_ai_notes(title, code):
-
-    prompt = f"""
-You are an expert DSA teacher.
-
-Analyze this LeetCode solution.
-
-Problem:
-{title}
-
-Code:
-{code}
-
-Return markdown only.
-
-## Intuition
-
-## Pattern
-
-## Key Trick
-
-## Approach
-
-## Complexity
-
-Time: O(...)
-
-Space: O(...)
-
-## Interview Tip
-
-## Common Mistake
-
-## Alternative Approach
-"""
-
-    response = client.models.generate_content(
-        model="gemini-3.5-flash",
-        contents=prompt
-    )
-
-    return response.text
-
-
-# =========================
-# MAIN LOOP
-# =========================
+# Check if directory exists
+if not os.path.exists(BASE_DIR):
+    print(f"Error: Directory '{BASE_DIR}' does not exist.")
+    exit(1)
 
 for folder in os.listdir(BASE_DIR):
-
     path = os.path.join(BASE_DIR, folder)
 
     if not os.path.isdir(path):
@@ -88,7 +33,6 @@ for folder in os.listdir(BASE_DIR):
     slug = folder.replace("_", "-")
 
     try:
-
         response = requests.post(
             "https://leetcode.com/graphql",
             json={
@@ -96,109 +40,125 @@ for folder in os.listdir(BASE_DIR):
                 "variables": {
                     "titleSlug": slug
                 }
-            }
+            },
+            timeout=20
         )
 
-        data = response.json()["data"]["question"]
+        response.raise_for_status()
+        response_data = response.json()
 
-        if not data:
-            print(f"Skipping {slug}")
+        if (
+            "data" not in response_data
+            or not response_data["data"]
+            or not response_data["data"]["question"]
+        ):
+            print(f"Skipping {slug}: No data found")
             continue
+
+        data = response_data["data"]["question"]
 
         title = data["title"]
         difficulty = data["difficulty"]
 
         tags = ", ".join(
-            [x["name"] for x in data["topicTags"]]
+            tag["name"] for tag in data.get("topicTags", [])
         )
 
-        content = data["content"]
+        content = data.get("content") or "No description available."
 
+        # Remove HTML tags
         clean_content = re.sub(
             r"<.*?>",
             "",
-            content
+            content,
+            flags=re.DOTALL
         )
 
+        clean_content = html.unescape(clean_content)
         clean_content = clean_content[:3000]
 
-        # =====================
-        # READ SOLUTION
-        # =====================
+        # Find solution file
+        solution_file = None
+        language = "cpp"
 
-        solution_file = os.path.join(
-            path,
-            "solution.cpp"
-        )
+        for ext in ["cpp", "java", "py"]:
+            temp = os.path.join(path, f"solution.{ext}")
+
+            if os.path.exists(temp):
+                solution_file = temp
+
+                if ext == "cpp":
+                    language = "cpp"
+                elif ext == "java":
+                    language = "java"
+                else:
+                    language = "python"
+
+                break
 
         code = ""
-
-        if os.path.exists(solution_file):
-
-            with open(
-                solution_file,
-                "r",
-                encoding="utf-8"
-            ) as f:
-
+        if solution_file:
+            with open(solution_file, "r", encoding="utf-8") as f:
                 code = f.read()
+        else:
+            code = "// No local solution file found."
 
-        # =====================
-        # AI GENERATION
-        # =====================
+        # Building the string template
+        readme = f"""# 🚀 {title}
 
-        ai_notes = ""
-
-        if code.strip():
-
-            print(f"Generating AI notes for {title}...")
-
-            ai_notes = generate_ai_notes(
-                title,
-                code
-            )
-
-        # =====================
-        # README
-        # =====================
-
-        readme = f"""# {title}
-
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/{slug}/
 
-## Difficulty
+---
 
-{difficulty}
+## 🎯 Difficulty
 
-## Tags
+**{difficulty}**
+
+---
+
+## 🏷️ Tags
 
 {tags}
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 {clean_content}
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
-{ai_notes}
+```{language}
+{code}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on {time.strftime("%Y-%m-%d %H:%M:%S")}*
 """
 
-        with open(
-            os.path.join(path, "README.md"),
-            "w",
-            encoding="utf-8"
-        ) as f:
-
+        # Write README to the problem directory
+        readme_path = os.path.join(path, "README.md")
+        with open(readme_path, "w", encoding="utf-8") as f:
             f.write(readme)
 
-        print(f"Generated README for {title}")
+        print(f"✅ Generated README for {title}")
+        
+        # Add delay to avoid rate limiting
+        time.sleep(1)
 
+    except requests.exceptions.RequestException as e:
+        print(f"❌ Network error for {slug}: {e}")
     except Exception as e:
+        print(f"❌ Error processing {slug}: {e}")
 
-        print(f"Error: {slug}")
-        print(e)
-
-print("\\nDone!")
+print("\n✨ Done! All README files have been generated.")

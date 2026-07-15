@@ -1,60 +1,122 @@
-# Basic Calculator
+# 🚀 Basic Calculator
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/basic-calculator/
 
-## Difficulty
+---
 
-Hard
+## 🎯 Difficulty
 
-## Tags
+**Hard**
+
+---
+
+## 🏷️ Tags
 
 Math, String, Stack, Recursion
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given a string s representing a valid expression, implement a basic calculator to evaluate it, and return the result of the evaluation.
 
 Note: You are not allowed to use any built-in function which evaluates strings as mathematical expressions, such as eval().
 
-&nbsp;
+ 
 Example 1:
 
 
-Input: s = &quot;1 + 1&quot;
+Input: s = "1 + 1"
 Output: 2
 
 
 Example 2:
 
 
-Input: s = &quot; 2-1 + 2 &quot;
+Input: s = " 2-1 + 2 "
 Output: 3
 
 
 Example 3:
 
 
-Input: s = &quot;(1+(4+5+2)-3)+(6+8)&quot;
+Input: s = "(1+(4+5+2)-3)+(6+8)"
 Output: 23
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= s.length &lt;= 3 * 105
-	s consists of digits, &#39;+&#39;, &#39;-&#39;, &#39;(&#39;, &#39;)&#39;, and &#39; &#39;.
+	1 <= s.length <= 3 * 105
+	s consists of digits, '+', '-', '(', ')', and ' '.
 	s represents a valid expression.
-	&#39;+&#39; is not used as a unary operation (i.e., &quot;+1&quot; and &quot;+(2 + 3)&quot; is invalid).
-	&#39;-&#39; could be used as a unary operation (i.e., &quot;-1&quot; and &quot;-(2 + 3)&quot; is valid).
+	'+' is not used as a unary operation (i.e., "+1" and "+(2 + 3)" is invalid).
+	'-' could be used as a unary operation (i.e., "-1" and "-(2 + 3)" is valid).
 	There will be no two consecutive operators in the input.
 	Every number and running calculation will fit in a signed 32-bit integer.
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
+class Solution {
+    public int calculate(String s) {
+        Stack<Integer> st = new Stack<>();
 
+        int num = 0;
+        int sign = 1;
+        int result = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (Character.isDigit(ch)) {
+                num = num * 10 + (ch - '0');
+            } 
+            else if (ch == '+') {
+                result += sign * num;
+                num = 0;
+                sign = 1;
+            } 
+            else if (ch == '-') {
+                result += sign * num;
+                num = 0;
+                sign = -1;
+            } 
+            else if (ch == '(') {
+               
+                st.push(result);
+                st.push(sign);
+
+                result = 0;
+                sign = 1;
+            } 
+            else if (ch == ')') {
+                result += sign * num;
+                num = 0;
+
+                result *= st.pop(); 
+                result += st.pop(); 
+            }
+        }
+
+        result += sign * num;
+        return result;
+    }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:52*

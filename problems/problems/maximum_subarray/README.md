@@ -1,21 +1,27 @@
-# Maximum Subarray
+# 🚀 Maximum Subarray
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/maximum-subarray/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Array, Divide and Conquer, Dynamic Programming
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given an integer array nums, find the subarray with the largest sum, and return its sum.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -40,18 +46,48 @@ Output: 23
 Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= nums.length &lt;= 105
-	-104 &lt;= nums[i] &lt;= 104
+	1 <= nums.length <= 105
+	-104 <= nums[i] <= 104
 
 
-&nbsp;
+ 
 Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        // Initialize maxSum with the first element of the array
+        int maxsum = nums[0];
+        int currsum = 0;
+
+        for(int num : nums){
+           // Either add current number to existing sum or start fresh with num
+            currsum = max(num , currsum + num );
+            // Update global maximum if currentSum is better
+            maxsum = max(maxsum , currsum);
+        }
+
+        return maxsum;
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:14*

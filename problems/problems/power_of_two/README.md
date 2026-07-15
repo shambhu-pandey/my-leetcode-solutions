@@ -1,23 +1,29 @@
-# Power of Two
+# 🚀 Power of Two
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/power-of-two/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 Math, Bit Manipulation, Recursion
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given an integer n, return true if it is a power of two. Otherwise, return false.
 
 An integer n is a power of two, if there exists an integer x such that n == 2x.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -41,18 +47,65 @@ Input: n = 3
 Output: false
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	-231 &lt;= n &lt;= 231 - 1
+	-231 <= n <= 231 - 1
 
 
-&nbsp;
+ 
 Follow up: Could you solve it without loops/recursion?
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```java
+// Count set bits.
+// If set bits = 1 → power of two
+
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        
+        if(n<=0) return false;
+        
+        while(n%2==0){
+            n=n/2;
+        }
+        if(n==1){
+            return true;
+        }
+        else{
+            return false;
+        }
 
 
+                
+        // int count =0;
+        // while(n>0){
+        //     if(n%2==1){
+        //         count++;
+        //     }
+        //     n= n/2;
+        // }
+        // if(count ==1){
+        //     return true;
+        // }
+        // else{
+        //     return false;
+        // }
+
+    }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:56*

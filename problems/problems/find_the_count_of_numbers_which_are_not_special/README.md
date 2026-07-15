@@ -1,17 +1,23 @@
-# Find the Count of Numbers Which Are Not Special
+# 🚀 Find the Count of Numbers Which Are Not Special
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/find-the-count-of-numbers-which-are-not-special/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Array, Math, Number Theory
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 You are given 2 positive integers l and r. For any number x, all positive divisors of x except x are called the proper divisors of x.
 
@@ -24,7 +30,7 @@ A number is called special if it has exactly 2 proper divisors. For example:
 
 Return the count of numbers in the range [l, r] that are not special.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -49,16 +55,60 @@ Explanation:
 The special numbers in the range [4, 16] are 4 and 9.
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= l &lt;= r &lt;= 109
+	1 <= l <= r <= 109
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
+class Solution {
+   
+   public static boolean isPrime(int n){
 
+       if(n<2) return false;
+
+       for(long i = 2; i*i <=n; i++){
+           if(n% i ==0){
+            return false;
+           }
+       }
+       return true;
+   }
+
+    public int nonSpecialCount(int l, int r) {
+        
+        int specialCount = 0;
+       
+       for(int i = 2; i*i <= r ; i++){
+            if(isPrime(i)){
+                long square = i*i;
+               if(square >= l && square <=r){
+                    specialCount++;
+               }
+            }
+        }
+
+        int total = r-l+1;
+        int nonSpecial = total- specialCount;
+
+        return nonSpecial;
+    }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:19*

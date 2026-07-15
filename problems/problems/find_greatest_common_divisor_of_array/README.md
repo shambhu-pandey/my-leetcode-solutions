@@ -1,23 +1,29 @@
-# Find Greatest Common Divisor of Array
+# 🚀 Find Greatest Common Divisor of Array
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/find-greatest-common-divisor-of-array/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 Array, Math, Number Theory
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given an integer array nums, return the greatest common divisor of the smallest number and largest number in nums.
 
 The greatest common divisor of two numbers is the largest positive integer that evenly divides both numbers.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -51,15 +57,46 @@ The largest number in nums is 3.
 The greatest common divisor of 3 and 3 is 3.
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	2 &lt;= nums.length &lt;= 1000
-	1 &lt;= nums[i] &lt;= 1000
+	2 <= nums.length <= 1000
+	1 <= nums[i] <= 1000
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+
+int gcd(int a ,int b){
+    if(b>a)
+    return gcd(b,a);
+    if(b==0)
+    return a;
+    return gcd(b , a%b);
+}
+    int findGCD(vector<int>& nums) {
+        sort(nums.begin() , nums.end());
+        int min ,max;
+        min = nums[0];
+        max = nums[nums.size()-1];
+        return gcd(max, min);
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:35*

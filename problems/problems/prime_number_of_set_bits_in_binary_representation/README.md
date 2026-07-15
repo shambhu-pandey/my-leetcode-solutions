@@ -1,38 +1,44 @@
-# Prime Number of Set Bits in Binary Representation
+# 🚀 Prime Number of Set Bits in Binary Representation
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 Math, Bit Manipulation
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given two integers left and right, return the count of numbers in the inclusive range [left, right] having a prime number of set bits in their binary representation.
 
-Recall that the number of set bits an integer has is the number of 1&#39;s present when written in binary.
+Recall that the number of set bits an integer has is the number of 1's present when written in binary.
 
 
 	For example, 21 written in binary is 10101, which has 3 set bits.
 
 
-&nbsp;
+ 
 Example 1:
 
 
 Input: left = 6, right = 10
 Output: 4
 Explanation:
-6  -&gt; 110 (2 set bits, 2 is prime)
-7  -&gt; 111 (3 set bits, 3 is prime)
-8  -&gt; 1000 (1 set bit, 1 is not prime)
-9  -&gt; 1001 (2 set bits, 2 is prime)
-10 -&gt; 1010 (2 set bits, 2 is prime)
+6  -> 110 (2 set bits, 2 is prime)
+7  -> 111 (3 set bits, 3 is prime)
+8  -> 1000 (1 set bit, 1 is not prime)
+9  -> 1001 (2 set bits, 2 is prime)
+10 -> 1010 (2 set bits, 2 is prime)
 4 numbers have a prime number of set bits.
 
 
@@ -42,26 +48,81 @@ Example 2:
 Input: left = 10, right = 15
 Output: 5
 Explanation:
-10 -&gt; 1010 (2 set bits, 2 is prime)
-11 -&gt; 1011 (3 set bits, 3 is prime)
-12 -&gt; 1100 (2 set bits, 2 is prime)
-13 -&gt; 1101 (3 set bits, 3 is prime)
-14 -&gt; 1110 (3 set bits, 3 is prime)
-15 -&gt; 1111 (4 set bits, 4 is not prime)
+10 -> 1010 (2 set bits, 2 is prime)
+11 -> 1011 (3 set bits, 3 is prime)
+12 -> 1100 (2 set bits, 2 is prime)
+13 -> 1101 (3 set bits, 3 is prime)
+14 -> 1110 (3 set bits, 3 is prime)
+15 -> 1111 (4 set bits, 4 is not prime)
 5 numbers have a prime number of set bits.
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= left &lt;= right &lt;= 106
-	0 &lt;= right - left &lt;= 104
+	1 <= left <= right <= 106
+	0 <= right - left <= 104
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
+// 1️⃣ Convert number to binary
+// 2️⃣ Count set bits (number of 1s)
+// 3️⃣ Check if that count is prime
+// If prime → increase count.
+class Solution {
+   
+   public static int countBits(int n){
+    int count=0;
+         while(n>0){
+            if(n%2 ==1){
+                count++;
+            }
+            n = n/2;
+         }
+         return count;
+   }
 
+   public static boolean isPrime(int n){
+    if(n<2) return false;
+
+    for(int i = 2; i*i<=n ; i++){
+        if(n%i==0){
+            return false;
+        }
+    }
+
+    return true;
+   }
+
+    public int countPrimeSetBits(int left, int right) {
+        
+        int result = 0;
+
+        for(int i = left; i<= right; i++){
+            int bits = countBits(i);
+
+            if(isPrime(bits)){
+                result++;
+            }
+        }
+
+        return result;
+    }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:31*

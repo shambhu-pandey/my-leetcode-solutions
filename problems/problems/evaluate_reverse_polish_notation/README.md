@@ -1,17 +1,23 @@
-# Evaluate Reverse Polish Notation
+# 🚀 Evaluate Reverse Polish Notation
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/evaluate-reverse-polish-notation/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Array, Math, Stack
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 You are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.
 
@@ -20,7 +26,7 @@ Evaluate the expression. Return an integer that represents the value of the expr
 Note that:
 
 
-	The valid operators are &#39;+&#39;, &#39;-&#39;, &#39;*&#39;, and &#39;/&#39;.
+	The valid operators are '+', '-', '*', and '/'.
 	Each operand may be an integer or another expression.
 	The division between two integers always truncates toward zero.
 	There will not be any division by zero.
@@ -28,11 +34,11 @@ Note that:
 	The answer and all the intermediate calculations can be represented in a 32-bit integer.
 
 
-&nbsp;
+ 
 Example 1:
 
 
-Input: tokens = [&quot;2&quot;,&quot;1&quot;,&quot;+&quot;,&quot;3&quot;,&quot;*&quot;]
+Input: tokens = ["2","1","+","3","*"]
 Output: 9
 Explanation: ((2 + 1) * 3) = 9
 
@@ -40,7 +46,7 @@ Explanation: ((2 + 1) * 3) = 9
 Example 2:
 
 
-Input: tokens = [&quot;4&quot;,&quot;13&quot;,&quot;5&quot;,&quot;/&quot;,&quot;+&quot;]
+Input: tokens = ["4","13","5","/","+"]
 Output: 6
 Explanation: (4 + (13 / 5)) = 6
 
@@ -48,7 +54,7 @@ Explanation: (4 + (13 / 5)) = 6
 Example 3:
 
 
-Input: tokens = [&quot;10&quot;,&quot;6&quot;,&quot;9&quot;,&quot;3&quot;,&quot;+&quot;,&quot;-11&quot;,&quot;*&quot;,&quot;/&quot;,&quot;*&quot;,&quot;17&quot;,&quot;+&quot;,&quot;5&quot;,&quot;+&quot;]
+Input: tokens = ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
 Output: 22
 Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
 = ((10 * (6 / (12 * -11))) + 17) + 5
@@ -59,17 +65,66 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
 = 22
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= tokens.length &lt;= 104
-	tokens[i] is either an operator: &quot;+&quot;, &quot;-&quot;, &quot;*&quot;, or &quot;/&quot;, or an integer in the range [-200, 200].
+	1 <= tokens.length <= 104
+	tokens[i] is either an operator: "+", "-", "*", or "/", or an integer in the range [-200, 200].
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
+class Solution {
+    public int evalRPN(String[] tokens) {
+        
+        Stack<Integer> stack = new Stack<>();
 
+        for(String token : tokens){
+           if(token.equals("+")|| token.equals("-")||
+            token.equals("*")|| token.equals("/")){
+              
+              int b = stack.pop();
+              int a = stack.pop();
+
+              switch(token){
+                case "+" :
+                stack.push(a+b);
+                break;
+
+                case "-":
+                stack.push(a-b);
+                break;
+                
+                case "*":
+                stack.push(a*b);
+                break;
+
+                case "/":
+                stack.push(a/b);
+                break;
+
+              }
+           }
+            else{
+                stack.push(Integer.parseInt(token));
+              }
+        }
+        return stack.pop();
+    }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:00*

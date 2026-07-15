@@ -1,21 +1,27 @@
-# Max Consecutive Ones III
+# 🚀 Max Consecutive Ones III
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/max-consecutive-ones-iii/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Array, Binary Search, Sliding Window, Prefix Sum
 
-## Problem Description
+---
 
-Given a binary array nums and an integer k, return the maximum number of consecutive 1&#39;s in the array if you can flip at most k 0&#39;s.
+## 📖 Problem Description
 
-&nbsp;
+Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array if you can flip at most k 0's.
+
+ 
 Example 1:
 
 
@@ -33,16 +39,53 @@ Explanation: [0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]
 Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= nums.length &lt;= 105
+	1 <= nums.length <= 105
 	nums[i] is either 0 or 1.
-	0 &lt;= k &lt;= nums.length
+	0 <= k <= nums.length
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+    int longestOnes(vector<int>& nums, int k) {
+        
+        int n = nums.size();
+        int left =0;
+        int zeroCount =0;
+
+        for(int right =0; right<n;right++){
+            if(nums[right]==0){
+                zeroCount++;
+            }
+            if(zeroCount>k){
+                if(nums[left] ==0){
+                    zeroCount--;
+                }
+                left++;
+            }
+           
+        }
+
+        return n-left;
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:20*

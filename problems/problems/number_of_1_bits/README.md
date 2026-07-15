@@ -1,21 +1,27 @@
-# Number of 1 Bits
+# 🚀 Number of 1 Bits
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/number-of-1-bits/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 Divide and Conquer, Bit Manipulation
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given a positive integer n, write a function that returns the number of set bits in its binary representation (also known as the Hamming weight).
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -52,18 +58,45 @@ Explanation:
 The input binary string 1111111111111111111111111111101 has a total of thirty set bits.
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= n &lt;= 231 - 1
+	1 <= n <= 231 - 1
 
 
-&nbsp;
+ 
 Follow up: If this function is called many times, how would you optimize it?
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
+class Solution {
+    public int hammingWeight(int n) {
+        
+        int count =0;
+        while(n>0){
+           if(n%2==1){
+            count++;
+           }
+           n = n/2;
+        }
+        return count;
 
+        // int count = Integer.bitCount(n);
+        // return count;
+    }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:37*

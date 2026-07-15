@@ -1,17 +1,23 @@
-# Maximum Sum of an Hourglass
+# 🚀 Maximum Sum of an Hourglass
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/maximum-sum-of-an-hourglass/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Array, Matrix, Prefix Sum
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 You are given an m x n integer matrix grid.
 
@@ -21,7 +27,7 @@ Return the maximum sum of the elements of an hourglass.
 
 Note that an hourglass cannot be rotated and must be entirely contained within the matrix.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -38,19 +44,51 @@ Output: 35
 Explanation: There is only one hourglass in the matrix, with the sum: 1 + 2 + 3 + 5 + 7 + 8 + 9 = 35.
 
 
-&nbsp;
+ 
 Constraints:
 
 
 	m == grid.length
 	n == grid[i].length
-	3 &lt;= m, n &lt;= 150
-	0 &lt;= grid[i][j] &lt;= 106
+	3 <= m, n <= 150
+	0 <= grid[i][j] <= 106
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
+class Solution {
+    public int maxSum(int[][] mat) {
+        int n = mat.length;
+        int m = mat[0].length;
+        if(n<3 || m<3){
+            return -1;
+        }
+        int ans = Integer.MIN_VALUE;
+      
 
+        for(int i = 0 ; i < n-2;i++){
+            for(int j= 0; j < m-2;j++){
+               int sum =mat[i][j] + mat[i][j+1] + mat[i][j+2] +mat[i+1][j+1]+ mat[i+2][j]+ mat[i+2][j+1]+mat[i+2][j+2];
+                if(sum>ans){
+                    ans= sum;
+                }
+            }
+        }
+        return ans;
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:20:47*

@@ -1,17 +1,23 @@
-# Container With Most Water
+# 🚀 Container With Most Water
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/container-with-most-water/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Array, Two Pointers, Greedy
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
 
@@ -21,7 +27,7 @@ Return the maximum amount of water a container can store.
 
 Notice that you may not slant the container.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -37,16 +43,59 @@ Input: height = [1,1]
 Output: 1
 
 
-&nbsp;
+ 
 Constraints:
 
 
 	n == height.length
-	2 &lt;= n &lt;= 105
-	0 &lt;= height[i] &lt;= 104
+	2 <= n <= 105
+	0 <= height[i] <= 104
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+       
+       int i =0; 
+       int j = height.size()-1;
+
+      int maxarea =0;
+
+       while(i<j){
+
+        int h = min(height[i] , height[j]);
+        int width = j-i;
+
+        int area = h*width;
+        //update area
+        maxarea = max(area , maxarea);
+       
+       //move smaller height pointer
+        if(height[i] < height[j]){
+            i++;
+        }
+        else{
+            j--;
+        }
+       }
+
+       return maxarea;
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:05*

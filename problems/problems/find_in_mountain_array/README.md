@@ -1,28 +1,34 @@
-# Find in Mountain Array
+# 🚀 Find in Mountain Array
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/find-in-mountain-array/
 
-## Difficulty
+---
 
-Hard
+## 🎯 Difficulty
 
-## Tags
+**Hard**
+
+---
+
+## 🏷️ Tags
 
 Array, Binary Search, Interactive
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 (This problem is an interactive problem.)
 
 You may recall that an array arr is a mountain array if and only if:
 
 
-	arr.length &gt;= 3
-	There exists some i with 0 &lt; i &lt; arr.length - 1 such that:
+	arr.length >= 3
+	There exists some i with 0 < i < arr.length - 1 such that:
 	
-		arr[0] &lt; arr[1] &lt; ... &lt; arr[i - 1] &lt; arr[i]
-		arr[i] &gt; arr[i + 1] &gt; ... &gt; arr[arr.length - 1]
+		arr[0] < arr[1] < ... < arr[i - 1] < arr[i]
+		arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
 	
 	
 
@@ -38,7 +44,7 @@ You cannot access the mountain array directly. You may only access the array usi
 
 Submissions making more than 100 calls to MountainArray.get will be judged Wrong Answer. Also, any solutions that attempt to circumvent the judge will result in disqualification.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -54,18 +60,87 @@ Output: -1
 Explanation: 3 does not exist in the array, so we return -1.
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	3 &lt;= mountainArr.length() &lt;= 104
-	0 &lt;= target &lt;= 109
-	0 &lt;= mountainArr.get(index) &lt;= 109
+	3 <= mountainArr.length() <= 104
+	0 <= target <= 109
+	0 <= mountainArr.get(index) <= 109
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
+/**
+ * // This is MountainArray's API interface.
+ * // You should not implement it, or speculate about its implementation
+ * interface MountainArray {
+ *     public int get(int index) {}
+ *     public int length() {}
+ * }
+ */
 
+class Solution {
+    
+    public int findInMountainArray(int target, MountainArray mountainArr) {
+        int peak = findPeak(mountainArr);
+        
+        // Search in left (ascending)
+        int left = binarySearch(mountainArr, target, 0, peak, true);
+        if (left != -1) return left;
+        
+        // Search in right (descending)
+        return binarySearch(mountainArr, target, peak + 1, mountainArr.length() - 1, false);
+    }
+    
+    // Find Peak
+    private int findPeak(MountainArray arr) {
+        int left = 0, right = arr.length() - 1;
+        
+        while (left < right) {
+            int mid = (left + right) / 2;
+            
+            if (arr.get(mid) < arr.get(mid + 1)) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        return left;
+    }
+    
+    // Binary Search
+    private int binarySearch(MountainArray arr, int target, int left, int right, boolean asc) {
+        
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            int val = arr.get(mid);
+            
+            if (val == target) return mid;
+            
+            if (asc) { // increasing
+                if (val < target) left = mid + 1;
+                else right = mid - 1;
+            } else { // decreasing
+                if (val < target) right = mid - 1;
+                else left = mid + 1;
+            }
+        }
+        return -1;
+    }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:24*

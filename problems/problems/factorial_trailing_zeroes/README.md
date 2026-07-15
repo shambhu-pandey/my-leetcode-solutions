@@ -1,23 +1,29 @@
-# Factorial Trailing Zeroes
+# 🚀 Factorial Trailing Zeroes
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/factorial-trailing-zeroes/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Math
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given an integer n, return the number of trailing zeroes in n!.
 
 Note that n! = n * (n - 1) * (n - 2) * ... * 3 * 2 * 1.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -41,19 +47,42 @@ Input: n = 0
 Output: 0
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	0 &lt;= n &lt;= 104
+	0 <= n <= 104
 
 
-&nbsp;
+ 
 Follow up: Could you write a solution that works in logarithmic time complexity?
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
+class Solution {
+    public int trailingZeroes(int n) {
+        int count = 0;
 
+        while(n>0){
+            n = n/5;
+            count = count + n;
+        }
+
+        return count;
+    }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:20:44*

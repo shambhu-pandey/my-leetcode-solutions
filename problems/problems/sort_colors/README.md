@@ -1,25 +1,31 @@
-# Sort Colors
+# 🚀 Sort Colors
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/sort-colors/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Array, Two Pointers, Sorting
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
 
 We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
 
-You must solve this problem without using the library&#39;s sort function.
+You must solve this problem without using the library's sort function.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -34,19 +40,38 @@ Input: nums = [2,0,1]
 Output: [0,1,2]
 
 
-&nbsp;
+ 
 Constraints:
 
 
 	n == nums.length
-	1 &lt;= n &lt;= 300
+	1 <= n <= 300
 	nums[i] is either 0, 1, or 2.
 
 
-&nbsp;
-Follow up:&nbsp;Could you come up with a one-pass algorithm using only&nbsp;constant extra space?
+ 
+Follow up: Could you come up with a one-pass algorithm using only constant extra space?
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        sort(nums.begin() , nums.end());
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:36*

@@ -1,21 +1,27 @@
-# Binary Tree Right Side View
+# 🚀 Binary Tree Right Side View
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/binary-tree-right-side-view/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Tree, Depth-First Search, Breadth-First Search, Binary Tree
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given the root of a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -56,15 +62,66 @@ Input: root = []
 Output: []
 
 
-&nbsp;
+ 
 Constraints:
 
 
 	The number of nodes in the tree is in the range [0, 100].
-	-100 &lt;= Node.val &lt;= 100
+	-100 <= Node.val <= 100
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    vector<int> rightSideView(TreeNode* root) {
+        vector<int> result;
+        if(!root) return result;
+
+        queue<TreeNode*> q;
+        q.push(root);
+
+        while(!q.empty()){
+            int size = q.size();
+
+            for(int i =0; i<size; i++){
+                TreeNode* node = q.front();
+                q.pop();
+               
+               // last node of this level → rightmost
+                if(i==size-1){
+                    result.push_back(node->val);
+                }
+                if(node->left) q.push(node->left);
+                if(node->right) q.push(node->right);
+            }
+        }
+        return result;
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:37*

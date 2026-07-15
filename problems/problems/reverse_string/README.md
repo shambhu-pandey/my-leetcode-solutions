@@ -1,23 +1,29 @@
-# Reverse String
+# 🚀 Reverse String
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/reverse-string/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 Two Pointers, String
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Write a function that reverses a string. The input string is given as an array of characters s.
 
 You must do this by modifying the input array in-place with O(1) extra memory.
 
-&nbsp;
+ 
 Example 1:
 Input: s = ["h","e","l","l","o"]
 Output: ["o","l","l","e","h"]
@@ -25,15 +31,41 @@ Example 2:
 Input: s = ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= s.length &lt;= 105
+	1 <= s.length <= 105
 	s[i] is a printable ascii character.
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        int left =0;
+        int right = s.size()-1;
+
+        while(left<right){
+            swap(s[left] , s[right]);
+            left++;
+            right--;
+        }
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:06*

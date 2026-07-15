@@ -1,57 +1,98 @@
-# Length of Last Word
+# 🚀 Length of Last Word
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/length-of-last-word/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 String
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given a string s consisting of words and spaces, return the length of the last word in the string.
 
 A word is a maximal substring consisting of non-space characters only.
 
-&nbsp;
+ 
 Example 1:
 
 
-Input: s = &quot;Hello World&quot;
+Input: s = "Hello World"
 Output: 5
-Explanation: The last word is &quot;World&quot; with length 5.
+Explanation: The last word is "World" with length 5.
 
 
 Example 2:
 
 
-Input: s = &quot;   fly me   to   the moon  &quot;
+Input: s = "   fly me   to   the moon  "
 Output: 4
-Explanation: The last word is &quot;moon&quot; with length 4.
+Explanation: The last word is "moon" with length 4.
 
 
 Example 3:
 
 
-Input: s = &quot;luffy is still joyboy&quot;
+Input: s = "luffy is still joyboy"
 Output: 6
-Explanation: The last word is &quot;joyboy&quot; with length 6.
+Explanation: The last word is "joyboy" with length 6.
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= s.length &lt;= 104
-	s consists of only English letters and spaces &#39; &#39;.
+	1 <= s.length <= 104
+	s consists of only English letters and spaces ' '.
 	There will be at least one word in s.
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+// Start from the end of the string
+// Skip any trailing spaces
+// Count characters until the next space or start of string
+// Return the count
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+       int length = 0;
+       int i = s.size() -1;
+
+
+       while(i>=0 && s[i]==' '){
+        i--;
+       }
+       while(i>=0 && s[i]!=' '){
+        length++;
+        i--;
+       }
+
+       return length;
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:10*

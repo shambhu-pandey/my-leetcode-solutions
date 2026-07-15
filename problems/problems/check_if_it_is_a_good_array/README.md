@@ -1,23 +1,29 @@
-# Check If It Is a Good Array
+# 🚀 Check If It Is a Good Array
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/check-if-it-is-a-good-array/
 
-## Difficulty
+---
 
-Hard
+## 🎯 Difficulty
 
-## Tags
+**Hard**
+
+---
+
+## 🏷️ Tags
 
 Array, Math, Number Theory
 
-## Problem Description
+---
 
-Given an array nums of&nbsp;positive integers. Your task is to select some subset of nums, multiply each element by an integer and add all these numbers.&nbsp;The array is said to be&nbsp;good&nbsp;if you can obtain a sum of&nbsp;1&nbsp;from the array by any possible subset and multiplicand.
+## 📖 Problem Description
 
-Return&nbsp;True&nbsp;if the array is good&nbsp;otherwise&nbsp;return&nbsp;False.
+Given an array nums of positive integers. Your task is to select some subset of nums, multiply each element by an integer and add all these numbers. The array is said to be good if you can obtain a sum of 1 from the array by any possible subset and multiplicand.
 
-&nbsp;
+Return True if the array is good otherwise return False.
+
+ 
 Example 1:
 
 
@@ -43,17 +49,49 @@ Input: nums = [3,6]
 Output: false
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= nums.length &lt;= 10^5
-	1 &lt;= nums[i] &lt;= 10^9
+	1 <= nums.length <= 10^5
+	1 <= nums[i] <= 10^9
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
+class Solution {
+    
+    public static int gcd(int a , int b){
+        while(b!=0){
+          int temp = b;
+          b = a%b;
+          a = temp;
+        }
+        return a;
+    }
+    
+    public boolean isGoodArray(int[] nums) {
+        int g = nums[0];
 
+       for(int i = 1; i<nums.length ; i++){
+         g = gcd(g , nums[i]);
+       }
+
+       return g== 1;
+    }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:20:46*

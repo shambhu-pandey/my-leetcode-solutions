@@ -1,17 +1,23 @@
-# Merge Sorted Array
+# 🚀 Merge Sorted Array
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/merge-sorted-array/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 Array, Two Pointers, Sorting
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
 
@@ -19,7 +25,7 @@ Merge nums1 and nums2 into a single array sorted in non-decreasing order.
 
 The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -48,23 +54,59 @@ The result of the merge is [1].
 Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
 
 
-&nbsp;
+ 
 Constraints:
 
 
 	nums1.length == m + n
 	nums2.length == n
-	0 &lt;= m, n &lt;= 200
-	1 &lt;= m + n &lt;= 200
-	-109 &lt;= nums1[i], nums2[j] &lt;= 109
+	0 <= m, n <= 200
+	1 <= m + n <= 200
+	-109 <= nums1[i], nums2[j] <= 109
 
 
-&nbsp;
+ 
 Follow up: Can you come up with an algorithm that runs in O(m + n) time?
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i = m-1 ; int j = n-1;
+        int k = m+n-1;
 
+//merge from back
+        while( i>=0  && j>=0 ){
+            if(nums1[i]>nums2[j]){
+                nums1[k--]= nums1[i--];
+            }
+            else{
+                nums1[k--]= nums2[j--];
+            }
+        }
+
+        // while(i<m){
+        //     nums1[k++]= nums1[i++];
+        // }
+        while(j>=0){
+            nums1[k--]= nums2[j--];
+        }
+
+       
+    }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:10*

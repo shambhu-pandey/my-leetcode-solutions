@@ -1,23 +1,29 @@
-# Rotate Image
+# 🚀 Rotate Image
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/rotate-image/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Array, Math, Matrix
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
 
 You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -32,16 +38,47 @@ Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
 Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
 
 
-&nbsp;
+ 
 Constraints:
 
 
 	n == matrix.length == matrix[i].length
-	1 &lt;= n &lt;= 20
-	-1000 &lt;= matrix[i][j] &lt;= 1000
+	1 <= n <= 20
+	-1000 <= matrix[i][j] <= 1000
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+        
+       int n = matrix.size();
+       
+       // transpose of matrix
+       for(int i =0;i<n;i++){
+        for(int j =i+1;j<n;j++){
+            swap(matrix[i][j] , matrix[j][i]);
+        }
+       }
+       //reverse of matrix
+       for(int i =0;i<n;i++){
+        reverse(matrix[i].begin(), matrix[i].end());
+       }
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:11*

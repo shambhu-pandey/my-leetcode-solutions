@@ -1,21 +1,27 @@
-# Rotate Array
+# 🚀 Rotate Array
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/rotate-array/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Array, Math, Two Pointers
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -37,16 +43,16 @@ rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= nums.length &lt;= 105
-	-231 &lt;= nums[i] &lt;= 231 - 1
-	0 &lt;= k &lt;= 105
+	1 <= nums.length <= 105
+	-231 <= nums[i] <= 231 - 1
+	0 <= k <= 105
 
 
-&nbsp;
+ 
 Follow up:
 
 
@@ -55,6 +61,61 @@ Follow up:
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+
+    void reverse(vector<int>&nums , int start ,int end){
+        while(start<end){
+            swap(nums[start] , nums[end]);
+            start++;
+            end--;
+        }
+    }
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        k = k%n;
+
+        reverse(nums, 0, n-1);
+        reverse(nums, 0, k-1);
+        reverse(nums, k, n-1);
+    }
+};
+
+
+// class Solution {
+// public:
+//     void rotate(vector<int>& nums, int k) {
+//         int n = nums.size();
+
+//         k= k%n;
+
+//         vector<int>rotate;
+
+//         for(int i = n-k;i<n;i++){
+//             rotate.push_back(nums[i]);
+//         }
+//         for(int i = 0;i<n-k;i++){
+//             rotate.push_back(nums[i]);
+//         
+
+//         for(int i =0;i<n;i++){
+//             nums[i] = rotate[i];
+//         }
+//     }
+// };
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:41*

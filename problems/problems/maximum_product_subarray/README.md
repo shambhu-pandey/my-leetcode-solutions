@@ -1,17 +1,23 @@
-# Maximum Product Subarray
+# 🚀 Maximum Product Subarray
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/maximum-product-subarray/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Array, Dynamic Programming
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given an integer array nums, find a subarray that has the largest product, and return the product.
 
@@ -19,7 +25,7 @@ The test cases are generated so that the answer will fit in a 32-bit integer.
 
 Note that the product of an array with a single element is the value of that element.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -36,18 +42,55 @@ Output: 0
 Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= nums.length &lt;= 2 * 104
-	-10 &lt;= nums[i] &lt;= 10
+	1 <= nums.length <= 2 * 104
+	-10 <= nums[i] <= 10
 	The product of any subarray of nums is guaranteed to fit in a 32-bit integer.
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
 
+```java
+class Solution {
+        public int maxProduct(int[] nums){
+            int ans = Integer.MIN_VALUE;
+            int currentProduct = 1;
 
+          // 1st pass
+          for(int i = 0 ; i < nums.length; i++){
+            currentProduct *=nums[i];
+            ans = Math.max(ans, currentProduct);
+            if(currentProduct==0){
+                currentProduct=1;
+            }
+          }
+          
+          currentProduct=1;
+        //   2nd pass
+          for(int i = nums.length-1 ; i>=0;i--){
+            currentProduct *=nums[i];
+            ans = Math.max(ans, currentProduct);
+            if(currentProduct==0){
+                currentProduct=1;
+            }
+          }
+           return ans;
+        }
+}
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:04*

@@ -1,17 +1,23 @@
-# Remove All Adjacent Duplicates In String
+# 🚀 Remove All Adjacent Duplicates In String
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 String, Stack
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 You are given a string s consisting of lowercase English letters. A duplicate removal consists of choosing two adjacent and equal letters and removing them.
 
@@ -19,32 +25,63 @@ We repeatedly make duplicate removals on s until we no longer can.
 
 Return the final string after all such duplicate removals have been made. It can be proven that the answer is unique.
 
-&nbsp;
+ 
 Example 1:
 
 
-Input: s = &quot;abbaca&quot;
-Output: &quot;ca&quot;
+Input: s = "abbaca"
+Output: "ca"
 Explanation: 
-For example, in &quot;abbaca&quot; we could remove &quot;bb&quot; since the letters are adjacent and equal, and this is the only possible move.  The result of this move is that the string is &quot;aaca&quot;, of which only &quot;aa&quot; is possible, so the final string is &quot;ca&quot;.
+For example, in "abbaca" we could remove "bb" since the letters are adjacent and equal, and this is the only possible move.  The result of this move is that the string is "aaca", of which only "aa" is possible, so the final string is "ca".
 
 
 Example 2:
 
 
-Input: s = &quot;azxxzy&quot;
-Output: &quot;ay&quot;
+Input: s = "azxxzy"
+Output: "ay"
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= s.length &lt;= 105
+	1 <= s.length <= 105
 	s consists of lowercase English letters.
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+    string removeDuplicates(string s) {
+        string st ="";
+
+        for(char ch : s){
+
+            if(!st.empty() && st.back()==ch){
+                st.pop_back();
+            }
+            else{
+                st.push_back(ch);
+            }
+        } 
+
+        return st;
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:27*

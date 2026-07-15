@@ -1,21 +1,27 @@
-# Palindrome Number
+# 🚀 Palindrome Number
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/palindrome-number/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 Math
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given an integer x, return true if x is a palindrome, and false otherwise.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -40,16 +46,47 @@ Output: false
 Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	-231&nbsp;&lt;= x &lt;= 231&nbsp;- 1
+	-231 <= x <= 231 - 1
 
 
-&nbsp;
+ 
 Follow up: Could you solve it without converting the integer to a string?
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        
+        if(x<0 || (x%10==0 && x!=0)){
+            return false;
+        }
+        long long reversedNum =0;
+        int original = x;
+
+        while(x>0){
+            int lastDigit= x%10;   // last digit nikaal liye 
+            reversedNum = (reversedNum*10)+ lastDigit;
+            x /=10;
+        }
+        return reversedNum == original;
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:23*

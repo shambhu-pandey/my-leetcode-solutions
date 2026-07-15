@@ -1,55 +1,108 @@
-# Remove K Digits
+# 🚀 Remove K Digits
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/remove-k-digits/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 String, Stack, Greedy, Monotonic Stack
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Given string num representing a non-negative integer num, and an integer k, return the smallest possible integer after removing k digits from num.
 
-&nbsp;
+ 
 Example 1:
 
 
-Input: num = &quot;1432219&quot;, k = 3
-Output: &quot;1219&quot;
+Input: num = "1432219", k = 3
+Output: "1219"
 Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 which is the smallest.
 
 
 Example 2:
 
 
-Input: num = &quot;10200&quot;, k = 1
-Output: &quot;200&quot;
+Input: num = "10200", k = 1
+Output: "200"
 Explanation: Remove the leading 1 and the number is 200. Note that the output must not contain leading zeroes.
 
 
 Example 3:
 
 
-Input: num = &quot;10&quot;, k = 2
-Output: &quot;0&quot;
+Input: num = "10", k = 2
+Output: "0"
 Explanation: Remove all the digits from the number and it is left with nothing which is 0.
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= k &lt;= num.length &lt;= 105
+	1 <= k <= num.length <= 105
 	num consists of only digits.
 	num does not have any leading zeros except for the zero itself.
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+    string removeKdigits(string num, int k) {
+        stack<char> st;
+
+        for(int i = 0 ; i<num.size() ; i++){
+            while(!st.empty() && k > 0 && st.top() > num[i]){
+                st.pop();
+                k--;
+            }
+            st.push(num[i]);
+        }
+
+        while(!st.empty() && k >0){
+            st.pop();
+            k--;
+        }
+        if(st.empty()) return "0";
+        string res  = "";
+
+        while(!st.empty()){
+            res.push_back(st.top());
+            st.pop();
+        }
+        // trimming last zeroes
+        while(res.size() > 0 && res.back() == '0'){
+            res.pop_back();
+        }
+        reverse(res.begin() , res.end());
+        if(res.empty())  return "0";
+
+        return res;
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:01*

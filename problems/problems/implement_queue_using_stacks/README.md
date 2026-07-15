@@ -1,17 +1,23 @@
-# Implement Queue using Stacks
+# 🚀 Implement Queue using Stacks
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/implement-queue-using-stacks/
 
-## Difficulty
+---
 
-Easy
+## 🎯 Difficulty
 
-## Tags
+**Easy**
+
+---
+
+## 🏷️ Tags
 
 Stack, Design, Queue
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
 
@@ -28,15 +34,15 @@ Notes:
 
 
 	You must use only standard operations of a stack, which means only push to top, peek/pop from top, size, and is empty operations are valid.
-	Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or deque (double-ended queue) as long as you use only a stack&#39;s standard operations.
+	Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or deque (double-ended queue) as long as you use only a stack's standard operations.
 
 
-&nbsp;
+ 
 Example 1:
 
 
 Input
-[&quot;MyQueue&quot;, &quot;push&quot;, &quot;push&quot;, &quot;peek&quot;, &quot;pop&quot;, &quot;empty&quot;]
+["MyQueue", "push", "push", "peek", "pop", "empty"]
 [[], [1], [2], [], [], []]
 Output
 [null, null, null, 1, 1, false]
@@ -50,19 +56,77 @@ myQueue.pop(); // return 1, queue is [2]
 myQueue.empty(); // return false
 
 
-&nbsp;
+ 
 Constraints:
 
 
-	1 &lt;= x &lt;= 9
-	At most 100&nbsp;calls will be made to push, pop, peek, and empty.
+	1 <= x <= 9
+	At most 100 calls will be made to push, pop, peek, and empty.
 	All the calls to pop and peek are valid.
 
 
-&nbsp;
+ 
 Follow-up: Can you implement the queue such that each operation is amortized O(1) time complexity? In other words, performing n operations will take overall O(n) time even if one of those operations may take longer.
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class MyQueue {
+    stack<int> s1;
+    stack<int> s2;
+public:
+    MyQueue() {
+        
+    }
+    
+    void push(int x) {
+        while(!s1.empty()){
+            s2.push(s1.top());
+            s1.pop();
+        }
+
+        s1.push(x);
+
+        while(!s2.empty()){
+            s1.push(s2.top());
+            s2.pop();
+    }
+    }
+    
+    int pop() {
+        int element = s1.top();
+        s1.pop();
+        return element;
+    }
+    
+    int peek() {
+        return s1.top();
+    }
+    
+    bool empty() {
+        return s1.empty();
+    }
+};
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue* obj = new MyQueue();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->peek();
+ * bool param_4 = obj->empty();
+ */
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:22:24*

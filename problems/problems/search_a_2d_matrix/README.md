@@ -1,17 +1,23 @@
-# Search a 2D Matrix
+# 🚀 Search a 2D Matrix
 
-🔗 Link:
+🔗 **LeetCode Link:**  
 https://leetcode.com/problems/search-a-2d-matrix/
 
-## Difficulty
+---
 
-Medium
+## 🎯 Difficulty
 
-## Tags
+**Medium**
+
+---
+
+## 🏷️ Tags
 
 Array, Binary Search, Matrix
 
-## Problem Description
+---
+
+## 📖 Problem Description
 
 You are given an m x n integer matrix matrix with the following two properties:
 
@@ -24,7 +30,7 @@ Given an integer target, return true if target is in matrix or false otherwise.
 
 You must write a solution in O(log(m * n)) time complexity.
 
-&nbsp;
+ 
 Example 1:
 
 
@@ -39,17 +45,60 @@ Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13
 Output: false
 
 
-&nbsp;
+ 
 Constraints:
 
 
 	m == matrix.length
 	n == matrix[i].length
-	1 &lt;= m, n &lt;= 100
-	-104 &lt;= matrix[i][j], target &lt;= 104
+	1 <= m, n <= 100
+	-104 <= matrix[i][j], target <= 104
 
 
 
-## Solution
+---
 
-See `solution.cpp`
+## 💻 My Solution
+
+```cpp
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        
+        int row =matrix.size();
+        int col = matrix[0].size();  // ek pahla row pakad liya uska size then total no of col
+
+        int start =0;
+        int end = row*col -1; 
+        int mid =  start + (end-start)/2;
+
+        while(start<=end){
+           int element = matrix[mid/col][mid%col];
+
+           if(element == target){
+            return 1;
+           }
+
+           else if(element < target){
+            start = mid+1;
+           }
+           else{
+            end = mid-1;
+           }
+
+           mid = start + (end-start)/2;
+        }
+        return 0;
+    }
+};
+```
+
+---
+
+## 📝 Approach
+
+- Refer to the solution code above for the approach used.
+
+---
+
+*Generated on 2026-07-15 21:21:29*
