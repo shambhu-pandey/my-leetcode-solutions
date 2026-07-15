@@ -3,354 +3,455 @@
 ## 📊 Statistics
 
 - Total Solved: 82
+- Easy: 35
+- Medium: 42
+- Hard: 5
 
 ---
 
 ## 📚 Topics Covered
 
 
-### Array (37)
-
-- Binary Search
-- Check If It Is a Good Array
-- Construct Binary Tree from Inorder and Postorder Traversal
-- Container With Most Water
-- Count Primes
-- Evaluate Reverse Polish Notation
-- Find All Duplicates in an Array
-- Find Greatest Common Divisor of Array
-- Find Peak Element
-- Find in Mountain Array
-- Find the Count of Numbers Which Are Not Special
-- Majority Element
-- Max Consecutive Ones
-- Max Consecutive Ones III
-- Maximum Product Subarray
-- Maximum Subarray
-- Maximum Sum of an Hourglass
-- Merge Sorted Array
-- Minimum Size Subarray Sum
-- Move Zeroes
-- Next Greater Element I
-- Number of Islands
-- Partition Equal Subset Sum
-- Permutations
-- Product of Array Except Self
-- Remove Duplicates from Sorted Array
-- Rotate Array
-- Rotate Image
-- Search a 2D Matrix
-- Search a 2D Matrix II
-- Sort Colors
-- Spiral Matrix
-- Subarray Product Less Than K
-- Subsets
-- Target Sum
-- Trapping Rain Water
-- Unique Number of Occurrences
-
-### Backtracking (4)
-
-- Letter Combinations of a Phone Number
-- Permutations
-- Subsets
-- Target Sum
-
-### Binary Search (9)
-
-- Binary Search
-- Count Complete Tree Nodes
-- Find Peak Element
-- Find in Mountain Array
-- Max Consecutive Ones III
-- Minimum Size Subarray Sum
-- Search a 2D Matrix
-- Search a 2D Matrix II
-- Subarray Product Less Than K
-
-### Binary Search Tree (1)
-
-- Validate Binary Search Tree
-
-### Binary Tree (12)
-
-- Balanced Binary Tree
-- Binary Tree Inorder Traversal
-- Binary Tree Postorder Traversal
-- Binary Tree Preorder Traversal
-- Binary Tree Right Side View
-- Binary Tree Zigzag Level Order Traversal
-- Construct Binary Tree from Inorder and Postorder Traversal
-- Count Complete Tree Nodes
-- Diameter of Binary Tree
-- Maximum Depth of Binary Tree
-- Same Tree
-- Validate Binary Search Tree
-
-### Bit Manipulation (7)
-
-- Count Complete Tree Nodes
-- Hamming Distance
-- Number of 1 Bits
-- Power of Four
-- Power of Two
-- Prime Number of Set Bits in Binary Representation
-- Subsets
-
-### Breadth-First Search (5)
-
-- Binary Tree Right Side View
-- Binary Tree Zigzag Level Order Traversal
-- Maximum Depth of Binary Tree
-- Number of Islands
-- Same Tree
-
-### Counting (1)
-
-- Majority Element
-
-### Depth-First Search (10)
-
-- Balanced Binary Tree
-- Binary Tree Inorder Traversal
-- Binary Tree Postorder Traversal
-- Binary Tree Preorder Traversal
-- Binary Tree Right Side View
-- Diameter of Binary Tree
-- Maximum Depth of Binary Tree
-- Number of Islands
-- Same Tree
-- Validate Binary Search Tree
-
-### Design (3)
-
-- Implement Queue using Stacks
-- Implement Stack using Queues
-- Min Stack
-
-### Divide and Conquer (5)
-
-- Construct Binary Tree from Inorder and Postorder Traversal
-- Majority Element
-- Maximum Subarray
-- Number of 1 Bits
-- Search a 2D Matrix II
-
-### Dynamic Programming (9)
-
-- Fibonacci Number
-- Longest Palindromic Substring
-- Longest Valid Parentheses
-- Maximum Product Subarray
-- Maximum Subarray
-- Palindromic Substrings
-- Partition Equal Subset Sum
-- Target Sum
-- Trapping Rain Water
-
-### Enumeration (1)
-
-- Count Primes
-
-### Greedy (3)
-
-- Container With Most Water
-- Remove K Digits
-- Valid Palindrome II
-
-### Hash Table (7)
-
-- Construct Binary Tree from Inorder and Postorder Traversal
-- Find All Duplicates in an Array
-- Letter Combinations of a Phone Number
-- Majority Element
-- Next Greater Element I
-- Permutation in String
-- Unique Number of Occurrences
-
-### Interactive (1)
-
-- Find in Mountain Array
-
-### Linked List (8)
+## Array (37)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Binary Search](problems/problems/binary_search) | Easy |
+| [Check If It Is a Good Array](problems/problems/check_if_it_is_a_good_array) | Hard |
+| [Construct Binary Tree from Inorder and Postorder Traversal](problems/problems/construct_binary_tree_from_inorder_and_postorder_traversal) | Medium |
+| [Container With Most Water](problems/problems/container_with_most_water) | Medium |
+| [Count Primes](problems/problems/count_primes) | Medium |
+| [Evaluate Reverse Polish Notation](problems/problems/evaluate_reverse_polish_notation) | Medium |
+| [Find All Duplicates in an Array](problems/problems/find_all_duplicates_in_an_array) | Medium |
+| [Find Greatest Common Divisor of Array](problems/problems/find_greatest_common_divisor_of_array) | Easy |
+| [Find Peak Element](problems/problems/find_peak_element) | Medium |
+| [Find in Mountain Array](problems/problems/find_in_mountain_array) | Hard |
+| [Find the Count of Numbers Which Are Not Special](problems/problems/find_the_count_of_numbers_which_are_not_special) | Medium |
+| [Majority Element](problems/problems/majority_element) | Easy |
+| [Max Consecutive Ones](problems/problems/max_consecutive_ones) | Easy |
+| [Max Consecutive Ones III](problems/problems/max_consecutive_ones_iii) | Medium |
+| [Maximum Product Subarray](problems/problems/maximum_product_subarray) | Medium |
+| [Maximum Subarray](problems/problems/maximum_subarray) | Medium |
+| [Maximum Sum of an Hourglass](problems/problems/maximum_sum_of_an_hourglass) | Medium |
+| [Merge Sorted Array](problems/problems/merge_sorted_array) | Easy |
+| [Minimum Size Subarray Sum](problems/problems/minimum_size_subarray_sum) | Medium |
+| [Move Zeroes](problems/problems/move_zeroes) | Easy |
+| [Next Greater Element I](problems/problems/next_greater_element_i) | Easy |
+| [Number of Islands](problems/problems/number_of_islands) | Medium |
+| [Partition Equal Subset Sum](problems/problems/partition_equal_subset_sum) | Medium |
+| [Permutations](problems/problems/permutations) | Medium |
+| [Product of Array Except Self](problems/problems/product_of_array_except_self) | Medium |
+| [Remove Duplicates from Sorted Array](problems/problems/remove_duplicates_from_sorted_array) | Easy |
+| [Rotate Array](problems/problems/rotate_array) | Medium |
+| [Rotate Image](problems/problems/rotate_image) | Medium |
+| [Search a 2D Matrix](problems/problems/search_a_2d_matrix) | Medium |
+| [Search a 2D Matrix II](problems/problems/search_a_2d_matrix_ii) | Medium |
+| [Sort Colors](problems/problems/sort_colors) | Medium |
+| [Spiral Matrix](problems/problems/spiral_matrix) | Medium |
+| [Subarray Product Less Than K](problems/problems/subarray_product_less_than_k) | Medium |
+| [Subsets](problems/problems/subsets) | Medium |
+| [Target Sum](problems/problems/target_sum) | Medium |
+| [Trapping Rain Water](problems/problems/trapping_rain_water) | Hard |
+| [Unique Number of Occurrences](problems/problems/unique_number_of_occurrences) | Easy |
+
+
+## Backtracking (4)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Letter Combinations of a Phone Number](problems/problems/letter_combinations_of_a_phone_number) | Medium |
+| [Permutations](problems/problems/permutations) | Medium |
+| [Subsets](problems/problems/subsets) | Medium |
+| [Target Sum](problems/problems/target_sum) | Medium |
+
+
+## Binary Search (9)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Binary Search](problems/problems/binary_search) | Easy |
+| [Count Complete Tree Nodes](problems/problems/count_complete_tree_nodes) | Easy |
+| [Find Peak Element](problems/problems/find_peak_element) | Medium |
+| [Find in Mountain Array](problems/problems/find_in_mountain_array) | Hard |
+| [Max Consecutive Ones III](problems/problems/max_consecutive_ones_iii) | Medium |
+| [Minimum Size Subarray Sum](problems/problems/minimum_size_subarray_sum) | Medium |
+| [Search a 2D Matrix](problems/problems/search_a_2d_matrix) | Medium |
+| [Search a 2D Matrix II](problems/problems/search_a_2d_matrix_ii) | Medium |
+| [Subarray Product Less Than K](problems/problems/subarray_product_less_than_k) | Medium |
+
+
+## Binary Search Tree (1)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Validate Binary Search Tree](problems/problems/validate_binary_search_tree) | Medium |
+
+
+## Binary Tree (12)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Balanced Binary Tree](problems/problems/balanced_binary_tree) | Easy |
+| [Binary Tree Inorder Traversal](problems/problems/binary_tree_inorder_traversal) | Easy |
+| [Binary Tree Postorder Traversal](problems/problems/binary_tree_postorder_traversal) | Easy |
+| [Binary Tree Preorder Traversal](problems/problems/binary_tree_preorder_traversal) | Easy |
+| [Binary Tree Right Side View](problems/problems/binary_tree_right_side_view) | Medium |
+| [Binary Tree Zigzag Level Order Traversal](problems/problems/binary_tree_zigzag_level_order_traversal) | Medium |
+| [Construct Binary Tree from Inorder and Postorder Traversal](problems/problems/construct_binary_tree_from_inorder_and_postorder_traversal) | Medium |
+| [Count Complete Tree Nodes](problems/problems/count_complete_tree_nodes) | Easy |
+| [Diameter of Binary Tree](problems/problems/diameter_of_binary_tree) | Easy |
+| [Maximum Depth of Binary Tree](problems/problems/maximum_depth_of_binary_tree) | Easy |
+| [Same Tree](problems/problems/same_tree) | Easy |
+| [Validate Binary Search Tree](problems/problems/validate_binary_search_tree) | Medium |
+
+
+## Bit Manipulation (7)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Count Complete Tree Nodes](problems/problems/count_complete_tree_nodes) | Easy |
+| [Hamming Distance](problems/problems/hamming_distance) | Easy |
+| [Number of 1 Bits](problems/problems/number_of_1_bits) | Easy |
+| [Power of Four](problems/problems/power_of_four) | Easy |
+| [Power of Two](problems/problems/power_of_two) | Easy |
+| [Prime Number of Set Bits in Binary Representation](problems/problems/prime_number_of_set_bits_in_binary_representation) | Easy |
+| [Subsets](problems/problems/subsets) | Medium |
 
-- Add Two Numbers
-- Delete the Middle Node of a Linked List
-- Merge Two Sorted Lists
-- Odd Even Linked List
-- Palindrome Linked List
-- Remove Nth Node From End of List
-- Reverse Linked List
-- Rotate List
-
-### Math (16)
-
-- Add Two Numbers
-- Basic Calculator
-- Check If It Is a Good Array
-- Count Primes
-- Evaluate Reverse Polish Notation
-- Factorial Trailing Zeroes
-- Fibonacci Number
-- Find Greatest Common Divisor of Array
-- Find the Count of Numbers Which Are Not Special
-- Palindrome Number
-- Power of Four
-- Power of Two
-- Prime Number of Set Bits in Binary Representation
-- Reverse Integer
-- Rotate Array
-- Rotate Image
-
-### Matrix (6)
-
-- Maximum Sum of an Hourglass
-- Number of Islands
-- Rotate Image
-- Search a 2D Matrix
-- Search a 2D Matrix II
-- Spiral Matrix
-
-### Memoization (1)
-
-- Fibonacci Number
-
-### Monotonic Stack (3)
-
-- Next Greater Element I
-- Remove K Digits
-- Trapping Rain Water
-
-### Number Theory (4)
-
-- Check If It Is a Good Array
-- Count Primes
-- Find Greatest Common Divisor of Array
-- Find the Count of Numbers Which Are Not Special
-
-### Prefix Sum (5)
-
-- Max Consecutive Ones III
-- Maximum Sum of an Hourglass
-- Minimum Size Subarray Sum
-- Product of Array Except Self
-- Subarray Product Less Than K
-
-### Queue (2)
-
-- Implement Queue using Stacks
-- Implement Stack using Queues
-
-### Recursion (8)
-
-- Add Two Numbers
-- Basic Calculator
-- Fibonacci Number
-- Merge Two Sorted Lists
-- Palindrome Linked List
-- Power of Four
-- Power of Two
-- Reverse Linked List
-
-### Simulation (2)
-
-- Calculate Digit Sum of a String
-- Spiral Matrix
-
-### Sliding Window (4)
-
-- Max Consecutive Ones III
-- Minimum Size Subarray Sum
-- Permutation in String
-- Subarray Product Less Than K
-
-### Sorting (4)
-
-- Find All Duplicates in an Array
-- Majority Element
-- Merge Sorted Array
-- Sort Colors
-
-### Stack (14)
-
-- Basic Calculator
-- Binary Tree Inorder Traversal
-- Binary Tree Postorder Traversal
-- Binary Tree Preorder Traversal
-- Evaluate Reverse Polish Notation
-- Implement Queue using Stacks
-- Implement Stack using Queues
-- Longest Valid Parentheses
-- Min Stack
-- Next Greater Element I
-- Palindrome Linked List
-- Remove All Adjacent Duplicates In String
-- Remove K Digits
-- Trapping Rain Water
-
-### String (14)
-
-- Basic Calculator
-- Calculate Digit Sum of a String
-- Length of Last Word
-- Letter Combinations of a Phone Number
-- Longest Palindromic Substring
-- Longest Valid Parentheses
-- Palindromic Substrings
-- Permutation in String
-- Remove All Adjacent Duplicates In String
-- Remove K Digits
-- Reverse String
-- String Compression
-- Valid Palindrome
-- Valid Palindrome II
-
-### Tree (12)
-
-- Balanced Binary Tree
-- Binary Tree Inorder Traversal
-- Binary Tree Postorder Traversal
-- Binary Tree Preorder Traversal
-- Binary Tree Right Side View
-- Binary Tree Zigzag Level Order Traversal
-- Construct Binary Tree from Inorder and Postorder Traversal
-- Count Complete Tree Nodes
-- Diameter of Binary Tree
-- Maximum Depth of Binary Tree
-- Same Tree
-- Validate Binary Search Tree
-
-### Two Pointers (18)
-
-- Container With Most Water
-- Delete the Middle Node of a Linked List
-- Longest Palindromic Substring
-- Merge Sorted Array
-- Move Zeroes
-- Palindrome Linked List
-- Palindromic Substrings
-- Permutation in String
-- Remove Duplicates from Sorted Array
-- Remove Nth Node From End of List
-- Reverse String
-- Rotate Array
-- Rotate List
-- Sort Colors
-- String Compression
-- Trapping Rain Water
-- Valid Palindrome
-- Valid Palindrome II
-
-### Union-Find (1)
-
-- Number of Islands
+
+## Breadth-First Search (5)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Binary Tree Right Side View](problems/problems/binary_tree_right_side_view) | Medium |
+| [Binary Tree Zigzag Level Order Traversal](problems/problems/binary_tree_zigzag_level_order_traversal) | Medium |
+| [Maximum Depth of Binary Tree](problems/problems/maximum_depth_of_binary_tree) | Easy |
+| [Number of Islands](problems/problems/number_of_islands) | Medium |
+| [Same Tree](problems/problems/same_tree) | Easy |
+
+
+## Counting (1)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Majority Element](problems/problems/majority_element) | Easy |
+
+
+## Depth-First Search (10)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Balanced Binary Tree](problems/problems/balanced_binary_tree) | Easy |
+| [Binary Tree Inorder Traversal](problems/problems/binary_tree_inorder_traversal) | Easy |
+| [Binary Tree Postorder Traversal](problems/problems/binary_tree_postorder_traversal) | Easy |
+| [Binary Tree Preorder Traversal](problems/problems/binary_tree_preorder_traversal) | Easy |
+| [Binary Tree Right Side View](problems/problems/binary_tree_right_side_view) | Medium |
+| [Diameter of Binary Tree](problems/problems/diameter_of_binary_tree) | Easy |
+| [Maximum Depth of Binary Tree](problems/problems/maximum_depth_of_binary_tree) | Easy |
+| [Number of Islands](problems/problems/number_of_islands) | Medium |
+| [Same Tree](problems/problems/same_tree) | Easy |
+| [Validate Binary Search Tree](problems/problems/validate_binary_search_tree) | Medium |
+
+
+## Design (3)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Implement Queue using Stacks](problems/problems/implement_queue_using_stacks) | Easy |
+| [Implement Stack using Queues](problems/problems/implement_stack_using_queues) | Easy |
+| [Min Stack](problems/problems/min_stack) | Medium |
+
+
+## Divide and Conquer (5)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Construct Binary Tree from Inorder and Postorder Traversal](problems/problems/construct_binary_tree_from_inorder_and_postorder_traversal) | Medium |
+| [Majority Element](problems/problems/majority_element) | Easy |
+| [Maximum Subarray](problems/problems/maximum_subarray) | Medium |
+| [Number of 1 Bits](problems/problems/number_of_1_bits) | Easy |
+| [Search a 2D Matrix II](problems/problems/search_a_2d_matrix_ii) | Medium |
+
+
+## Dynamic Programming (9)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Fibonacci Number](problems/problems/fibonacci_number) | Easy |
+| [Longest Palindromic Substring](problems/problems/longest_palindromic_substring) | Medium |
+| [Longest Valid Parentheses](problems/problems/longest_valid_parentheses) | Hard |
+| [Maximum Product Subarray](problems/problems/maximum_product_subarray) | Medium |
+| [Maximum Subarray](problems/problems/maximum_subarray) | Medium |
+| [Palindromic Substrings](problems/problems/palindromic_substrings) | Medium |
+| [Partition Equal Subset Sum](problems/problems/partition_equal_subset_sum) | Medium |
+| [Target Sum](problems/problems/target_sum) | Medium |
+| [Trapping Rain Water](problems/problems/trapping_rain_water) | Hard |
+
+
+## Enumeration (1)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Count Primes](problems/problems/count_primes) | Medium |
+
+
+## Greedy (3)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Container With Most Water](problems/problems/container_with_most_water) | Medium |
+| [Remove K Digits](problems/problems/remove_k_digits) | Medium |
+| [Valid Palindrome II](problems/problems/valid_palindrome_ii) | Easy |
+
+
+## Hash Table (7)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Construct Binary Tree from Inorder and Postorder Traversal](problems/problems/construct_binary_tree_from_inorder_and_postorder_traversal) | Medium |
+| [Find All Duplicates in an Array](problems/problems/find_all_duplicates_in_an_array) | Medium |
+| [Letter Combinations of a Phone Number](problems/problems/letter_combinations_of_a_phone_number) | Medium |
+| [Majority Element](problems/problems/majority_element) | Easy |
+| [Next Greater Element I](problems/problems/next_greater_element_i) | Easy |
+| [Permutation in String](problems/problems/permutation_in_string) | Medium |
+| [Unique Number of Occurrences](problems/problems/unique_number_of_occurrences) | Easy |
+
+
+## Interactive (1)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Find in Mountain Array](problems/problems/find_in_mountain_array) | Hard |
+
+
+## Linked List (8)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Add Two Numbers](problems/problems/add_two_numbers) | Medium |
+| [Delete the Middle Node of a Linked List](problems/problems/delete_the_middle_node_of_a_linked_list) | Medium |
+| [Merge Two Sorted Lists](problems/problems/merge_two_sorted_lists) | Easy |
+| [Odd Even Linked List](problems/problems/odd_even_linked_list) | Medium |
+| [Palindrome Linked List](problems/problems/palindrome_linked_list) | Easy |
+| [Remove Nth Node From End of List](problems/problems/remove_nth_node_from_end_of_list) | Medium |
+| [Reverse Linked List](problems/problems/reverse_linked_list) | Easy |
+| [Rotate List](problems/problems/rotate_list) | Medium |
+
+
+## Math (16)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Add Two Numbers](problems/problems/add_two_numbers) | Medium |
+| [Basic Calculator](problems/problems/basic_calculator) | Hard |
+| [Check If It Is a Good Array](problems/problems/check_if_it_is_a_good_array) | Hard |
+| [Count Primes](problems/problems/count_primes) | Medium |
+| [Evaluate Reverse Polish Notation](problems/problems/evaluate_reverse_polish_notation) | Medium |
+| [Factorial Trailing Zeroes](problems/problems/factorial_trailing_zeroes) | Medium |
+| [Fibonacci Number](problems/problems/fibonacci_number) | Easy |
+| [Find Greatest Common Divisor of Array](problems/problems/find_greatest_common_divisor_of_array) | Easy |
+| [Find the Count of Numbers Which Are Not Special](problems/problems/find_the_count_of_numbers_which_are_not_special) | Medium |
+| [Palindrome Number](problems/problems/palindrome_number) | Easy |
+| [Power of Four](problems/problems/power_of_four) | Easy |
+| [Power of Two](problems/problems/power_of_two) | Easy |
+| [Prime Number of Set Bits in Binary Representation](problems/problems/prime_number_of_set_bits_in_binary_representation) | Easy |
+| [Reverse Integer](problems/problems/reverse_integer) | Medium |
+| [Rotate Array](problems/problems/rotate_array) | Medium |
+| [Rotate Image](problems/problems/rotate_image) | Medium |
+
+
+## Matrix (6)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Maximum Sum of an Hourglass](problems/problems/maximum_sum_of_an_hourglass) | Medium |
+| [Number of Islands](problems/problems/number_of_islands) | Medium |
+| [Rotate Image](problems/problems/rotate_image) | Medium |
+| [Search a 2D Matrix](problems/problems/search_a_2d_matrix) | Medium |
+| [Search a 2D Matrix II](problems/problems/search_a_2d_matrix_ii) | Medium |
+| [Spiral Matrix](problems/problems/spiral_matrix) | Medium |
+
+
+## Memoization (1)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Fibonacci Number](problems/problems/fibonacci_number) | Easy |
+
+
+## Monotonic Stack (3)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Next Greater Element I](problems/problems/next_greater_element_i) | Easy |
+| [Remove K Digits](problems/problems/remove_k_digits) | Medium |
+| [Trapping Rain Water](problems/problems/trapping_rain_water) | Hard |
+
+
+## Number Theory (4)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Check If It Is a Good Array](problems/problems/check_if_it_is_a_good_array) | Hard |
+| [Count Primes](problems/problems/count_primes) | Medium |
+| [Find Greatest Common Divisor of Array](problems/problems/find_greatest_common_divisor_of_array) | Easy |
+| [Find the Count of Numbers Which Are Not Special](problems/problems/find_the_count_of_numbers_which_are_not_special) | Medium |
+
+
+## Prefix Sum (5)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Max Consecutive Ones III](problems/problems/max_consecutive_ones_iii) | Medium |
+| [Maximum Sum of an Hourglass](problems/problems/maximum_sum_of_an_hourglass) | Medium |
+| [Minimum Size Subarray Sum](problems/problems/minimum_size_subarray_sum) | Medium |
+| [Product of Array Except Self](problems/problems/product_of_array_except_self) | Medium |
+| [Subarray Product Less Than K](problems/problems/subarray_product_less_than_k) | Medium |
+
+
+## Queue (2)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Implement Queue using Stacks](problems/problems/implement_queue_using_stacks) | Easy |
+| [Implement Stack using Queues](problems/problems/implement_stack_using_queues) | Easy |
+
+
+## Recursion (8)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Add Two Numbers](problems/problems/add_two_numbers) | Medium |
+| [Basic Calculator](problems/problems/basic_calculator) | Hard |
+| [Fibonacci Number](problems/problems/fibonacci_number) | Easy |
+| [Merge Two Sorted Lists](problems/problems/merge_two_sorted_lists) | Easy |
+| [Palindrome Linked List](problems/problems/palindrome_linked_list) | Easy |
+| [Power of Four](problems/problems/power_of_four) | Easy |
+| [Power of Two](problems/problems/power_of_two) | Easy |
+| [Reverse Linked List](problems/problems/reverse_linked_list) | Easy |
+
+
+## Simulation (2)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Calculate Digit Sum of a String](problems/problems/calculate_digit_sum_of_a_string) | Easy |
+| [Spiral Matrix](problems/problems/spiral_matrix) | Medium |
+
+
+## Sliding Window (4)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Max Consecutive Ones III](problems/problems/max_consecutive_ones_iii) | Medium |
+| [Minimum Size Subarray Sum](problems/problems/minimum_size_subarray_sum) | Medium |
+| [Permutation in String](problems/problems/permutation_in_string) | Medium |
+| [Subarray Product Less Than K](problems/problems/subarray_product_less_than_k) | Medium |
+
+
+## Sorting (4)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Find All Duplicates in an Array](problems/problems/find_all_duplicates_in_an_array) | Medium |
+| [Majority Element](problems/problems/majority_element) | Easy |
+| [Merge Sorted Array](problems/problems/merge_sorted_array) | Easy |
+| [Sort Colors](problems/problems/sort_colors) | Medium |
+
+
+## Stack (14)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Basic Calculator](problems/problems/basic_calculator) | Hard |
+| [Binary Tree Inorder Traversal](problems/problems/binary_tree_inorder_traversal) | Easy |
+| [Binary Tree Postorder Traversal](problems/problems/binary_tree_postorder_traversal) | Easy |
+| [Binary Tree Preorder Traversal](problems/problems/binary_tree_preorder_traversal) | Easy |
+| [Evaluate Reverse Polish Notation](problems/problems/evaluate_reverse_polish_notation) | Medium |
+| [Implement Queue using Stacks](problems/problems/implement_queue_using_stacks) | Easy |
+| [Implement Stack using Queues](problems/problems/implement_stack_using_queues) | Easy |
+| [Longest Valid Parentheses](problems/problems/longest_valid_parentheses) | Hard |
+| [Min Stack](problems/problems/min_stack) | Medium |
+| [Next Greater Element I](problems/problems/next_greater_element_i) | Easy |
+| [Palindrome Linked List](problems/problems/palindrome_linked_list) | Easy |
+| [Remove All Adjacent Duplicates In String](problems/problems/remove_all_adjacent_duplicates_in_string) | Easy |
+| [Remove K Digits](problems/problems/remove_k_digits) | Medium |
+| [Trapping Rain Water](problems/problems/trapping_rain_water) | Hard |
+
+
+## String (14)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Basic Calculator](problems/problems/basic_calculator) | Hard |
+| [Calculate Digit Sum of a String](problems/problems/calculate_digit_sum_of_a_string) | Easy |
+| [Length of Last Word](problems/problems/length_of_last_word) | Easy |
+| [Letter Combinations of a Phone Number](problems/problems/letter_combinations_of_a_phone_number) | Medium |
+| [Longest Palindromic Substring](problems/problems/longest_palindromic_substring) | Medium |
+| [Longest Valid Parentheses](problems/problems/longest_valid_parentheses) | Hard |
+| [Palindromic Substrings](problems/problems/palindromic_substrings) | Medium |
+| [Permutation in String](problems/problems/permutation_in_string) | Medium |
+| [Remove All Adjacent Duplicates In String](problems/problems/remove_all_adjacent_duplicates_in_string) | Easy |
+| [Remove K Digits](problems/problems/remove_k_digits) | Medium |
+| [Reverse String](problems/problems/reverse_string) | Easy |
+| [String Compression](problems/problems/string_compression) | Medium |
+| [Valid Palindrome](problems/problems/valid_palindrome) | Easy |
+| [Valid Palindrome II](problems/problems/valid_palindrome_ii) | Easy |
+
+
+## Tree (12)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Balanced Binary Tree](problems/problems/balanced_binary_tree) | Easy |
+| [Binary Tree Inorder Traversal](problems/problems/binary_tree_inorder_traversal) | Easy |
+| [Binary Tree Postorder Traversal](problems/problems/binary_tree_postorder_traversal) | Easy |
+| [Binary Tree Preorder Traversal](problems/problems/binary_tree_preorder_traversal) | Easy |
+| [Binary Tree Right Side View](problems/problems/binary_tree_right_side_view) | Medium |
+| [Binary Tree Zigzag Level Order Traversal](problems/problems/binary_tree_zigzag_level_order_traversal) | Medium |
+| [Construct Binary Tree from Inorder and Postorder Traversal](problems/problems/construct_binary_tree_from_inorder_and_postorder_traversal) | Medium |
+| [Count Complete Tree Nodes](problems/problems/count_complete_tree_nodes) | Easy |
+| [Diameter of Binary Tree](problems/problems/diameter_of_binary_tree) | Easy |
+| [Maximum Depth of Binary Tree](problems/problems/maximum_depth_of_binary_tree) | Easy |
+| [Same Tree](problems/problems/same_tree) | Easy |
+| [Validate Binary Search Tree](problems/problems/validate_binary_search_tree) | Medium |
+
+
+## Two Pointers (18)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Container With Most Water](problems/problems/container_with_most_water) | Medium |
+| [Delete the Middle Node of a Linked List](problems/problems/delete_the_middle_node_of_a_linked_list) | Medium |
+| [Longest Palindromic Substring](problems/problems/longest_palindromic_substring) | Medium |
+| [Merge Sorted Array](problems/problems/merge_sorted_array) | Easy |
+| [Move Zeroes](problems/problems/move_zeroes) | Easy |
+| [Palindrome Linked List](problems/problems/palindrome_linked_list) | Easy |
+| [Palindromic Substrings](problems/problems/palindromic_substrings) | Medium |
+| [Permutation in String](problems/problems/permutation_in_string) | Medium |
+| [Remove Duplicates from Sorted Array](problems/problems/remove_duplicates_from_sorted_array) | Easy |
+| [Remove Nth Node From End of List](problems/problems/remove_nth_node_from_end_of_list) | Medium |
+| [Reverse String](problems/problems/reverse_string) | Easy |
+| [Rotate Array](problems/problems/rotate_array) | Medium |
+| [Rotate List](problems/problems/rotate_list) | Medium |
+| [Sort Colors](problems/problems/sort_colors) | Medium |
+| [String Compression](problems/problems/string_compression) | Medium |
+| [Trapping Rain Water](problems/problems/trapping_rain_water) | Hard |
+| [Valid Palindrome](problems/problems/valid_palindrome) | Easy |
+| [Valid Palindrome II](problems/problems/valid_palindrome_ii) | Easy |
+
+
+## Union-Find (1)
+
+| Problem | Difficulty |
+|----------|------------|
+| [Number of Islands](problems/problems/number_of_islands) | Medium |
 
 
 ---
 
 ## 📂 Repository Structure
 
-Each problem folder contains:
+Each folder contains:
 
 - solution.cpp
 - README.md

@@ -5,6 +5,13 @@ from collections import defaultdict
 BASE_DIR = "problems/problems"
 
 topics = defaultdict(list)
+
+difficulty_count = {
+    "Easy": 0,
+    "Medium": 0,
+    "Hard": 0
+}
+
 total = 0
 
 for folder in os.listdir(BASE_DIR):
@@ -24,13 +31,31 @@ for folder in os.listdir(BASE_DIR):
     with open(readme_path, "r", encoding="utf-8") as f:
         content = f.read()
 
+    # Title
     title_match = re.search(r"# (.+)", content)
-    title = title_match.group(1) if title_match else folder
+    title = title_match.group(1).strip() if title_match else folder
 
+    # Difficulty
+    diff_match = re.search(
+        r"## Difficulty\s+([A-Za-z]+)",
+        content
+    )
+
+    difficulty = "Unknown"
+
+    if diff_match:
+        difficulty = diff_match.group(1)
+
+        if difficulty in difficulty_count:
+            difficulty_count[difficulty] += 1
+
+    # Tags
     tags_match = re.search(
         r"## Tags\s+([\s\S]*?)\n\n",
         content
     )
+
+    tags = []
 
     if tags_match:
         tags = [
@@ -39,13 +64,22 @@ for folder in os.listdir(BASE_DIR):
         ]
 
         for tag in tags:
-            topics[tag].append(title)
+            topics[tag].append(
+                {
+                    "title": title,
+                    "difficulty": difficulty,
+                    "folder": folder
+                }
+            )
 
 readme = f"""# 🚀 LeetCode Solutions
 
 ## 📊 Statistics
 
 - Total Solved: {total}
+- Easy: {difficulty_count["Easy"]}
+- Medium: {difficulty_count["Medium"]}
+- Hard: {difficulty_count["Hard"]}
 
 ---
 
@@ -55,18 +89,27 @@ readme = f"""# 🚀 LeetCode Solutions
 
 for topic in sorted(topics):
 
-    readme += f"\n### {topic} ({len(topics[topic])})\n\n"
+    readme += f"\n## {topic} ({len(topics[topic])})\n\n"
 
-    for problem in sorted(topics[topic]):
-        readme += f"- {problem}\n"
+    readme += "| Problem | Difficulty |\n"
+    readme += "|----------|------------|\n"
+
+    for p in sorted(topics[topic], key=lambda x: x["title"]):
+
+        readme += (
+            f"| "
+            f"[{p['title']}](problems/problems/{p['folder']}) "
+            f"| {p['difficulty']} |\n"
+        )
+
+    readme += "\n"
 
 readme += """
-
 ---
 
 ## 📂 Repository Structure
 
-Each problem folder contains:
+Each folder contains:
 
 - solution.cpp
 - README.md
