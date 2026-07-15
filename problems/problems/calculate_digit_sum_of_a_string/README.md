@@ -65,3 +65,94 @@ Constraints:
 ## Solution
 
 See `solution.cpp`
+
+## Intuition
+
+The problem asks us to repeatedly compress a string of digits until its length is less than or equal to $k$. The compression rule is simple: split the string into consecutive groups of size $k$, calculate the sum of the digits in each group, convert these sums back to strings, and merge them. 
+
+Since this process relies on step-by-step execution of a set of rules, this is a classic **simulation problem**. The string size shrinks rapidly in each iteration, which guarantees that the process will terminate quickly.
+
+---
+
+## Pattern
+
+This problem falls under the **Simulation and String Chunking** pattern. 
+* **Simulation:** Emulating the exact steps described in the problem statement.
+* **Two-Pointer/Chunking Loop:** Iterating through a linear data structure in chunks of a fixed size $k$ rather than element-by-element (`i += k`).
+
+---
+
+## Key Trick
+
+1. **ASCII to Integer Conversion:** To get the integer value of a character digit, subtract `'0'` from it:
+   $$\text{digit} = s[j] - '0'$$
+2. **Boundary Safeguard:** When splitting the string into blocks of size $k$, the last block might have fewer than $k$ characters. The inner loop condition `j < i + k && j < s.size()` elegantly handles this edge case without causing an out-of-bounds error.
+
+---
+
+## Approach
+
+1. **Loop Condition:** We run a `while` loop that continues as long as the length of $s$ is greater than $k$.
+2. **Chunk Processing:** Inside the loop, we initialize an empty string `temp` to store the newly formed string for the current round.
+3. **Iterating in Strides of $k$:** We iterate through $s$ using a pointer $i$ that increments by $k$ in each step (`i += k`).
+4. **Summing Digits:** For each chunk starting at $i$, an inner loop sums up to $k$ characters starting from $j = i$ to $j < i + k$, ensuring $j$ never exceeds the bounds of string $s$.
+5. **Reconstruction:** We convert the calculated sum to a string using `to_string(sum)` and append it to `temp`.
+6. **State Update:** Once the outer loop finishes processing the entire string $s$, we update $s = temp$ and repeat the process.
+
+---
+
+## Complexity
+
+### Time: $O(N)$
+In each round, we traverse the current string of length $L$ to compute the digit sums. 
+* In the first round, we do $O(N)$ work.
+* In each subsequent round, the length of the string reduces significantly. Specifically, a group of $k$ characters is replaced by the string representation of their sum (which has a length of at most $\log_{10}(9k)$). Since $k \ge 2$, the length of the string shrinks geometrically.
+* The sum of a geometric series dominated by the first term $N$ is $O(N)$.
+
+### Space: $O(N)$
+We need auxiliary space for the `temp` string to store the intermediate merged results. In the worst case (the first iteration), `temp` will take up to $O(N)$ space.
+
+---
+
+## Interview Tip
+
+* **Clarify Constraints first:** In interviews, always look at the constraints. Here, the maximum length of $s$ is $100$. This small constraint tells you that a straightforward simulation is highly optimal and there is no need for over-engineering with complex data structures.
+* **Explain the $s[i] - '0'$ idiom:** Interviewers love when you explain *why* something works. Briefly mention that in C++, characters are represented by ASCII values sequentially (e.g., `'0'` is 48, `'1'` is 49), so subtracting `'0'` yields the exact integer value.
+
+---
+
+## Common Mistake
+
+* **Out of Bounds in the Last Chunk:** A frequent bug is running the inner loop exactly $k$ times (`j < i + k`) without checking if `j` has crossed the string boundary (`j < s.size()`). This leads to a Segmentation Fault or undefined behavior.
+* **Integer Overflow via Direct Conversion:** Trying to convert the entire string $s$ into an integer first (e.g., using `std::stoi`) will result in an overflow because $s$ can be up to 100 digits long, which exceeds standard 64-bit integer limits (`long long`). Always process it as a string.
+
+---
+
+## Alternative Approach
+
+Instead of an iterative `while` loop, this problem can be elegantly solved using **Recursion**. Since the problem asks us to repeat the same operation on a progressively smaller string until a base condition is met ($s.\text{size}() \le k$), it naturally maps to a recursive structure.
+
+### Recursive Implementation (C++):
+```cpp
+class Solution {
+public:
+    string digitSum(string s, int k) {
+        // Base Case
+        if (s.size() <= k) return s;
+        
+        string next_s = "";
+        for (int i = 0; i < s.size(); i += k) {
+            int sum = 0;
+            for (int j = i; j < i + k && j < s.size(); ++j) {
+                sum += (s[j] - '0');
+            }
+            next_s += to_string(sum);
+        }
+        
+        // Recursive Step
+        return digitSum(next_s, k);
+    }
+};
+```
+* **Pros:** Highly readable and mathematically intuitive.
+* **Cons:** Uses $O(\log N)$ implicit call stack space, though practically negligible for $N = 100$.
